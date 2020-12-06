@@ -72,10 +72,11 @@ class TestLab : public ::testing::Test {
 TEST_F(TestLab, SortByName) {
   // базовый сценарий
   std::vector<Student> students = {student1, student2, student3, student4,
-                                   student5, student6, student7, student8};
+                                   student5, student6, student7, student8,
+                                   student9, student10};
   std::vector<Student> result = {
-      student5, student6, student1, student3,
-      student7, student2, student8, student4,
+      student5, student6, student1, student10, student3,
+      student7, student2, student9, student8,  student4,
   };
   SortByName(students);
   EXPECT_EQ(students, result);
@@ -100,14 +101,19 @@ TEST_F(TestLab, SortByName) {
 TEST_F(TestLab, SortByRating) {
   // базовый сценарий
   std::vector<Student> students = {student1, student2, student3, student4,
-                                   student5, student6, student7, student8};
-  std::vector<Student> result = {student1, student2, student5, student8,
-                                 student3, student7, student4, student6};
+                                   student5, student6, student7, student8,
+                                   };
+  std::vector<Student> result = {student1,  student2, student5, student8,
+                                    student3,  student7,student4, student6,
+                                    };
+
   SortByRating(students);
   EXPECT_EQ(students, result);
   // вектор, состоящий из ребят с одинаковым рейтингом
   students = {student8, student5};
   result = {student8, student5};
+  students = {student2, student6};
+  result = {student2, student6};
   SortByRating(students);
   EXPECT_EQ(students, result);
   // вектор из одного элемента
@@ -202,7 +208,7 @@ TEST_F(TestLab, VectorMathExcellent) {
   EXPECT_EQ(students, result);
 }
 
-// Массив уникальных названий групп
+ //Массив уникальных названий групп
 TEST_F(TestLab, GroupsId) {
   // базовый сценарий
   std::vector<Student> students = {student1, student2, student3,  student4,
@@ -232,8 +238,8 @@ TEST_F(TestLab, GroupsId) {
 TEST_F(TestLab, Groups) {
   // базовый сценарий
   std::vector<Student> students = {student1, student2, student3,  student4,
-                                   student5, student6, student10, student7,
-                                   student8, student9};
+                                   student5, student6,  student7,
+                                   student8, student9 ,student10};
   std::vector<Student> students1group = {student1, student2};
   std::vector<Student> students2group = {student3, student4, student5};
   std::vector<Student> students3group = {student6, student7, student8, student9,
