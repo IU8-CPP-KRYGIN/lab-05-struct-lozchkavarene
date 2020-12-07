@@ -14,8 +14,8 @@ set(
 include("tools/gate/cmake/HunterGate.cmake")
 
 HunterGate(
-  URL "https://github.com/cpp-pm/hunter/archive/v0.23.218.tar.gz"
-  SHA1 "9a3594a61227967fb92159339ba326701b287b19"
+        URL "https://github.com/cpp-pm/hunter/archive/v0.23.278.tar.gz"
+        SHA1 "35fa55bc1dfcf9f4d7264f8bb26cd1759ce1ae07"
 )
 
 
@@ -48,7 +48,7 @@ target_include_directories(tests
   PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 # TODO: change template word to project name and delete this comment
-target_link_libraries(tests GTest::main template)
+target_link_libraries(tests GTest::gmock_main template)
 
 enable_testing()
 add_test(NAME unit_tests COMMAND tests) 
