@@ -15,6 +15,7 @@ void SortByName(std::vector<Student>& students) {
     }
   }
 }
+
 void SortByRating(std::vector<Student>& students) {
   std::vector<double> srzn(students.size());
   Student v;
@@ -60,7 +61,6 @@ size_t CountExcellent(const std::vector<Student>& students) {
   return (students.size() - count);
 }
 
-std::vector<Student> VectorMathExcellent(const std::vector<Student>& students);
 unsigned amount(std::vector<std::string> Subjects) {
   unsigned int result = Subjects.size() + 1;
   for (unsigned int i = 0; i < Subjects.size(); i++) {
